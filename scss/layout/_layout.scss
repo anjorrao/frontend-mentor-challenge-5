@@ -1,0 +1,51 @@
+@import '../base/base';
+@import '../base/breakpoints';
+
+.card-wrapper {
+
+	@include media-breakpoint-up(md) { 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 70px 15px;
+	}
+
+	.card {
+		@include media-breakpoint-up(md) {
+			width: 645px;
+			margin: 0 auto;
+		}
+
+		.card-body {
+
+			@include media-breakpoint-up(md) {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.sub-content {
+
+				@include media-breakpoint-up(md) {
+					display: inline-flex;
+					flex-wrap: wrap;
+					align-content: space-between;
+
+					&:not(:first-child) {
+						flex: 2;
+					}
+				}
+			}
+		}
+	}
+}
+
+footer { 
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}

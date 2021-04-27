@@ -1,0 +1,57 @@
+@import '../base/base';
+@import '../base/breakpoints';
+
+.card {
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: -1px 2px 16px -4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: -1px 2px 16px -4px rgba(0,0,0,0.1);
+	-moz-box-shadow: -1px 2px 16px -4px rgba(0,0,0,0.1);
+
+	.card-body {
+		padding: 0;
+
+		.sub-content {
+			padding: 35px;
+
+			@include media-breakpoint-down(md) { 
+				padding: 20px;
+			}
+
+			.title {
+				font-size: 1.3rem;
+				width: 100%;
+				margin-bottom: 15px;
+				font-weight: 700;
+			}
+
+			.sub-title {
+				width: 100%;
+				font-weight: 700;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 0.9rem;
+
+				@include media-breakpoint-up(md) {
+					margin-bottom: 0;
+				}
+			}
+
+			&.white-card {
+				@include custom-card($white, $cyan, $yellow, $grayish-blue);
+			}
+
+			&.cyan-dark {
+				@include custom-card($cyan, $white, $white, $white);
+			}
+
+			&.cyan-light {
+				@include custom-card(rgba($cyan,0.8), $white, $white, rgba($white, 0.5));
+			}
+		}
+	}
+}
